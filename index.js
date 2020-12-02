@@ -1,9 +1,11 @@
 const express = require('express')
-const { getManufacturerIdWithProducts } = require('./controllers/manufacturers')
+const { getAllManufacturers } = require('./controllers/manufacturers')
+const { getManufacturerIdWithProducts, } = require('./controllers/manufacturers')
 const { getProductByIdWithManufacturers } = require('./controllers/products')
 
 const app = express()
 
+app.get('/', getAllManufacturers)
 app.get('/manufacturers/:id', getManufacturerIdWithProducts)
 app.get('/products/:id', getProductByIdWithManufacturers)
 
