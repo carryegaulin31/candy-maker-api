@@ -9,7 +9,7 @@ const getProductByIdWithManufacturers = async (request, response) => {
   })
 
   return products
-    ? response.send(product)
+    ? response.send(products)
     : response.sendStatus(404)
 }
 
