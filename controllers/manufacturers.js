@@ -1,12 +1,11 @@
 const models = require('../models')
-const manufacturers = require('../models/manufacturers')
 
-const getManufacturerId = async (request, response) => {
+const getManufacturerIdWithProducts = async (request, response) => {
   const { id } = request.params
 
-  const product = await models.Manufacturers.findOne({
+  const manufacturers = await models.Manufacturers.findAll({
     where: { id },
-    include: [{ model: models.Manufacturers }]
+    include: [{ model: models.Products }]
   })
 
   return manufacturers
@@ -14,4 +13,4 @@ const getManufacturerId = async (request, response) => {
     : response.sendStatus(404)
 }
 
-module.exports = { getManufacturerId }
+module.exports = { getManufacturerIdWithProducts }

@@ -3,12 +3,12 @@ const models = require('../models')
 const getProductByIdWithManufacturers = async (request, response) => {
   const { id } = request.params
 
-  const product = await models.Products.findOne({
+  const products = await models.Products.findAll({
     where: { id },
-    include: [{ model: models.Products }]
+    include: [{ model: models.Manufacturers }]
   })
 
-  return product
+  return products
     ? response.send(product)
     : response.sendStatus(404)
 }
