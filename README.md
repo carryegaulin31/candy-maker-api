@@ -1,6 +1,7 @@
 # Candy Maker API
 
 ## Part One Instructions
+
 In the initial commit of this project you were provided with the SQL to create a database of candies with their manufacturers. Working in a branch called `part-one-answer`, your task is to implement an Express driven REST API that allows a user to retrieve this data. Your API should support the routes listed below, pulling the data from the database via Sequelize models.
 
 ## Requests and Expected Respones
@@ -10,6 +11,7 @@ In the initial commit of this project you were provided with the SQL to create a
 **GET** http://localhost:1337/manufacturers
 
 **Response**
+
 ```JSON
 [{
   id: 1,
@@ -37,6 +39,7 @@ In the initial commit of this project you were provided with the SQL to create a
 **GET** http://localhost:1337/manufacturers/16
 
 **Response**
+
 ```JSON
 {
   id: 16,
@@ -62,6 +65,7 @@ In the initial commit of this project you were provided with the SQL to create a
 **GET** http://localhost:1337/products
 
 **Response**
+
 ```JSON
 [{
   id: 1,
@@ -89,6 +93,7 @@ In the initial commit of this project you were provided with the SQL to create a
 **GET** http://localhost:1337/products/26
 
 **Response**
+
 ```JSON
 {
   id: 26,
@@ -110,9 +115,11 @@ In the initial commit of this project you were provided with the SQL to create a
 ```
 
 ## Part Two Instructions
+
 In a branch called `part-two-answer`, continuing from `part-one-answer`, your task is to create two migrations. The first should create all needed tables for this project. The second should add all data for this project into those tables.  All existing routes should continue to work and the `setup.sql` should no longer be needed.
 
 ## Part Three Instructions
+
 In a branch called `part-three-answer`, continuing from `part-two-answer`, your task is to update the existing routes to support the specification laid out below.
 
 ## Requests and Expected Respones
@@ -124,6 +131,7 @@ In a branch called `part-three-answer`, continuing from `part-two-answer`, your 
 **GET** http://localhost:1337/manufacturers/zeta
 
 **Response**
+
 ```JSON
 {
   id: 16,
@@ -144,6 +152,7 @@ In a branch called `part-three-answer`, continuing from `part-two-answer`, your 
 **GET** http://localhost:1337/products/bonk
 
 **Response**
+
 ```JSON
 {
   id: 26,
