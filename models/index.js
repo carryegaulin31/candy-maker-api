@@ -28,4 +28,8 @@ const Products = ProductsModel(connection, Sequelize, Manufacturers)
 Manufacturers.hasMany(Products)
 Products.belongsTo(Manufacturers)
 
-module.exports = { Products, Manufacturers }
+module.exports = {
+  Products,
+  Manufacturers,
+  Op: Sequelize.Op
+}

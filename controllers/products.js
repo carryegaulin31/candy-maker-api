@@ -13,4 +13,22 @@ const getProductByIdWithManufacturers = async (request, response) => {
     : response.sendStatus(404)
 }
 
-module.exports = { getProductByIdWithManufacturers }
+const getProductByFuzzy = async (request, response) => {
+  const { name } = request.params
+
+  const products = await models.Products.findAll({
+    where: {
+      name: { [models.Op.like]: `%${name}%` }
+    },
+    include: [{ model: models.Manufacturers }]
+  })
+
+  return products
+    ? response.send(products)
+    : response.sendStatus(404)
+}
+
+module.exports = {
+  getProductByIdWithManufacturers,
+  getProductByFuzzy
+}

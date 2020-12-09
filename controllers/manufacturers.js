@@ -1,8 +1,12 @@
 const models = require('../models')
 
-const getAllManufacturers = async (request, response) => {
-
+const getAllManufacturersByFuzzy = async (request, response) => {
+  const { name } = request.params
+  
   const allManufacturers = await models.Manufacturers.findAll({
+    where: {
+      name: { [models.Op.like]: `%${name}%`}
+    },
     include: [{ model: models.Products }]
   })
 
@@ -25,4 +29,7 @@ const getManufacturerIdWithProducts = async (request, response) => {
     : response.sendStatus(404)
 }
 
-module.exports = { getAllManufacturers, getManufacturerIdWithProducts }
+module.exports = {
+getAllManufacturersByFuzzy, 
+getManufacturerIdWithProducts 
+}
