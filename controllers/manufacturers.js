@@ -5,7 +5,7 @@ const getAllManufacturersByFuzzy = async (request, response) => {
   
   const allManufacturers = await models.Manufacturers.findAll({
     where: {
-      name: { [models.Op.like]: `%${name}%`}
+      name: { [models.Op.like]: `%${name}%` }
     },
     include: [{ model: models.Products }]
   })

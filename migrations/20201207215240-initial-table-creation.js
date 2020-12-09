@@ -2,12 +2,6 @@ const models = require('../models')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
     await queryInterface.createTable('manufacturers', {
       id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
       name: { type: Sequelize.STRING, allowNull: false },
@@ -33,12 +27,6 @@ module.exports = {
     })
   },
   down: async (queryInterface) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-      Example:
-      return queryInterface.dropTable('users');
-    */
     await queryInterface.dropTable('products')
     return queryInterface.dropTable('manufacturers')
   }
