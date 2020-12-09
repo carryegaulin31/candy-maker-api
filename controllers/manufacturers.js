@@ -17,10 +17,8 @@ const getAllManufacturersByFuzzy = async (request, response) => {
 
 
 const getManufacturerIdWithProducts = async (request, response) => {
-  const { id } = request.params
-
+  
   const manufacturers = await models.Manufacturers.findAll({
-    where: { id },
     include: [{ model: models.Products }]
   })
 

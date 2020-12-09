@@ -15,13 +15,6 @@ const connection = new Sequelize(config.database, config.username, config.passwo
 const manufacturers = ManufacturersModel(connection, Sequelize)
 const products = ProductsModel(connection, Sequelize)
 
-/* const manufacturers = require('./manufacturers')
-const products = require('./products')
-const allManufacturers = require('./manufacturers')
-const connection = new Sequelize('candies', 'candies1', 'candies', {
-  host: 'localhost', dialect: 'mysql'
-}) */
-
 const Manufacturers = ManufacturersModel(connection, Sequelize)
 const Products = ProductsModel(connection, Sequelize, Manufacturers)
 
